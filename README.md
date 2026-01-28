@@ -1,6 +1,6 @@
 # JMeter
 
-JMeter instructions.
+**JMeter** instructions.
 
 
 ## Recording Test Scripts
