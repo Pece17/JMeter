@@ -13,7 +13,24 @@ A project for revisiting the basics of the **Apache JMeter** performance testing
 
 First I need to install the prerequisites of this project, and I start by going to https://jmeter.apache.org/download_jmeter.cgi to download the latest version (**5.6.3**) of the **Apache JMeter**. I choose the **apache-jmeter-5.6.3.zip** file because I'm using **Microsoft Windows 11 Home**. There is no installation file, and instead you just **right click** the **ZIP** file and select **Extract All...**. I'm not sure if it really matters where you place the folder, but ```C:\Tools\apache-jmeter-5.6.3``` path works, for example. I have it in ```C:\Users\Business\apache-jmeter-5.6.3``` because I don't use **JMeter** with my other accounts on this computer.
 
-After that I need to install **Java** to get **JMeter** working. **ChatGPT** recommends **Eclipse Temurin** **JDK** (**Java Development Kit**) **17 -** **LTS** (**Long-term support**) because "it is one of the most commonly used **OpenJDK** distributions and works well with **JMeter**". I go to https://adoptium.net/temurin/releases?version=17&os=any&arch=any and download the **Windows** installer (**Temurin jdk-17.0.20+8, Windows 64 bit (.MSI)**).
+After that I need to install **Java** to get **JMeter** working. **ChatGPT** recommends **Eclipse Temurin** **JDK** (**Java Development Kit**) **17 -** **LTS** (**Long-term support**) because "it is one of the most commonly used **OpenJDK** distributions and works well with **JMeter**". I go to https://adoptium.net/temurin/releases?version=17&os=any&arch=any and download the **Windows** installer (**Temurin jdk-17.0.20+8, Windows 64 bit (.MSI)**). During the installation I choose **Install just for you (Business)** because I also don't use **Java** with my other accounts on this computer. Apart from that, I go with the default settings and finish the installation.
+
+Finally, I test whether **JMeter** functions by locating the **jmeter.bat** file inside the ```\apache-jmeter-5.6.3\bin``` folder. The **JMeter** application and a **terminal window** open. The **terminal** output looks as follows:
+
+```
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+================================================================================
+Don't use GUI mode for load testing !, only for Test creation and Test debugging.
+For load testing, use CLI Mode (was NON GUI):
+   jmeter -n -t [jmx file] -l [results file] -e -o [Path to web report folder]
+& increase Java Heap to meet your test requirements:
+   Modify current env variable HEAP="-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m" in the jmeter batch file
+Check : https://jmeter.apache.org/usermanual/best-practices.html
+================================================================================
+```
 
 
 ## Recording Test Scripts
