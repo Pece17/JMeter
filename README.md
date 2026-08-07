@@ -39,7 +39,7 @@ These messages are normal, and it is important not to close the **terminal windo
 
 ## Creating a Test Plan and Recording a Test Script
 
-I now have **JMeter** opened, and it is time to create my first example **Test Plan**. **JMeter** projects are called **Test Plans**, and **Test Plan** is also always the top-level **object**.
+I now have **JMeter** opened, and it is time to create my first example **Test Plan**. **JMeter** projects are called **Test Plans**, and **Test Plan** is also always the **top-level object**.
 
 I start by opening **File** from top left corner, selecting **Templates...**, and choosing **Recording** as my **Template** for the **Test Plan**. I click **Create** which opens a new window asking for **hostToRecord:**. I enter ```the-internet.herokuapp.com``` because it's a popular practice website for automation and testing. I leave **recordingOutputFile:** as **recording.xml** and **schemeToRecord:** as **https** because it is the right **protocol** for this website. Then I press **Create** again.
 
