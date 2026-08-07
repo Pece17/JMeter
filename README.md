@@ -1,6 +1,15 @@
 # JMeter
 
-**JMeter** instructions.
+A project for revisiting the basics of the **Apache JMeter** performance testing tool. The purpose of this project is to refresh the knowledge and skills I previously gained with **JMeter** while working as a **performance tester** several years ago.
+
+
+## Table of Contents
+
+- [Software Installation and Setup]
+- 
+
+
+## Software Installation and Setup
 
 
 ## Recording Test Scripts
