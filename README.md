@@ -6,7 +6,7 @@ A project for revisiting the basics of the **Apache JMeter** performance testing
 ## Table of Contents
 
 - [Software Installation and Setup](https://github.com/Pece17/JMeter#software-installation-and-setup)
-- 
+- [Creating a Test Plan and Recording a Test Script](https://github.com/Pece17/JMeter/blob/main/README.md#creating-a-test-plan-and-recording-a-test-script)
 
 
 ## Software Installation and Setup
@@ -39,9 +39,11 @@ These messages are normal, and it is important not to close the **terminal windo
 
 ## Creating a Test Plan and Recording a Test Script
 
-I now have **JMeter** opened, and it is time to create my first example **Test Plan**. **JMeter** projects are called **Test Plans**, and **Test Plan** is also always the top-level **object**. At this stage you can name your **Test Plan** as you wish. It is probably good practice to do so, so I write **Example Plan** to **Name:**.
+I now have **JMeter** opened, and it is time to create my first example **Test Plan**. **JMeter** projects are called **Test Plans**, and **Test Plan** is also always the top-level **object**.
 
-After this I open **File** from top left corner, select **Templates...**, and choose **Recording** as my **Template** for the **Test Plan**. I click **Create** which opens a new window asking for **hostToRecord:**. I enter ```the-internet.herokuapp.com``` because it's a popular practice website for automation and testing. I leave **recordingOutputFile:** as **recording.xml** and **schemeToRecord:** as **https** because it is the right **protocol** for this website.
+I start by opening **File** from top left corner, selecting **Templates...**, and choosing **Recording** as my **Template** for the **Test Plan**. I click **Create** which opens a new window asking for **hostToRecord:**. I enter ```the-internet.herokuapp.com``` because it's a popular practice website for automation and testing. I leave **recordingOutputFile:** as **recording.xml** and **schemeToRecord:** as **https** because it is the right **protocol** for this website. Then I press **Create** again.
+
+At this stage you can name your **Test Plan** as you wish. It is probably good practice to do so, so I select **Test Plan** and write **Example Plan** to **Name:**.
 
 
 ## Recording Test Scripts
