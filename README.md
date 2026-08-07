@@ -55,6 +55,9 @@ _ JMeter Root CA for recording (INSTALL ONLY IF IT S YOURS)
 
 Remaining in **Google Chrome**, I open the **three-dot menu** from the top-right corner, open **Settings**, open **System**, and select **Open your computer's proxy settings**. This opens the **Proxy** settings in **Windows 11**. I press **Set up** under **Manual proxy setup**, turn **Use a proxy server** as **On**, enter ```127.0.0.1``` as the **Proxy IP address**, enter ```8888``` as the **Port**, and press **Save**.
 
+- ```127.0.0.1``` is the **loopback address** or **localhost**, meaning it points back to your own computer.
+- ```8888``` is the **port number** where **JMeter**'s **HTTP(S) Test Script Recorder** listens for **proxy connections**.
+
 
 ## Recording Test Scripts
 
