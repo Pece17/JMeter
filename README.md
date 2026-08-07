@@ -45,7 +45,13 @@ I start by opening **File** from the top-left corner, selecting **Templates...**
 
 At this stage you can name your **Test Plan** as you wish. It is probably good practice to do so, so I select **Test Plan** and write **Example Plan** to the **Name:** field. Now is also a good time to save, so I open **File** again, select **Save Test Plan as**, choose the destination, and **Save** my **Example Plan.jmx**. I save my **JMeter files** to ```C:\Users\Business\JMeter Scripts```, but the location is personal preference.
 
-Next up, I select the **HTTP(S) Test Script Recorder** element and press **Start**. This opens a window notifying about a **certificate** being created. I press **OK** and another window called **Recorder: Transactions Control** opens. I press **Stop** because I first need to import the new **certificate** to the **web browser** I'll be using for recording.
+Next up, I select the **HTTP(S) Test Script Recorder** element and press **Start**. This opens a window notifying about a **certificate** being created. I press **OK** and another window called **Recorder: Transactions Control** opens. I press **Stop** because I first need to import the new **certificate** to the **web browser** I'll be using for recording. I have decided to use **Google Chrome** for recording because it is not my main browser and I have cleared its **browsing data**.
+
+I open **Google Chrome** and paste ```chrome://certificate-manager/``` into the **address bar**. I then click **Installed by you** under **Custom**, select **Import** next to **Trusted Certificates**, locate the **ApacheJMeterTemporaryRootCA.crt** **certificate** in ```\apache-jmeter-5.6.3\bin``` location, and press **Open**. The following text appears:
+
+```
+_ JMeter Root CA for recording (INSTALL ONLY IF IT S YOURS)
+```
 
 
 ## Recording Test Scripts
