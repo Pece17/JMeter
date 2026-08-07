@@ -53,6 +53,8 @@ I open **Google Chrome** and paste ```chrome://certificate-manager/``` into the 
 _ JMeter Root CA for recording (INSTALL ONLY IF IT S YOURS)
 ```
 
+Remaining in **Google Chrome**, I open the **three-dot menu** from the top-right corner, open **Settings**, open **System**, and select **Open your computer's proxy settings**. This opens the **Proxy** settings in **Windows 11**. I press **Set up** under **Manual proxy setup**, turn **Use a proxy server** as **On**, designate ```127.0.0.1``` as the **Proxy IP address**, designate ```8888``` as the **Port**, and press **Save**.
+
 
 ## Recording Test Scripts
 
