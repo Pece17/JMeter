@@ -32,6 +32,10 @@ Check : https://jmeter.apache.org/usermanual/best-practices.html
 ================================================================================
 ```
 
+Those messages are normal, and it is important not to close the **terminal** because it will also close **JMeter**. Instead you can **Minimize** it.
+
+**JMeter** is now ready for use.
+
 
 ## Recording Test Scripts
 
