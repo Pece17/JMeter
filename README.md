@@ -5,11 +5,13 @@ A project for revisiting the basics of the **Apache JMeter** performance testing
 
 ## Table of Contents
 
-- [Software Installation and Setup]
+- [Software Installation and Setup](https://github.com/Pece17/JMeter#software-installation-and-setup)
 - 
 
 
 ## Software Installation and Setup
+
+First I need to install the prerequisites of this project, and I start by going to https://jmeter.apache.org/download_jmeter.cgi to download the latest version (**5.6.3**) of the **Apache JMeter**. I choose the **apache-jmeter-5.6.3.zip** file because I'm using **Microsoft Windows 11 Home**. 
 
 
 ## Recording Test Scripts
