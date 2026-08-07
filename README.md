@@ -43,7 +43,7 @@ I now have **JMeter** opened, and it is time to create my first example **Test P
 
 I start by opening **File** from the top-left corner, selecting **Templates...**, and choosing **Recording** as my **Template** for the **Test Plan**. I click **Create** which opens a new window asking for **hostToRecord:**. I enter ```the-internet.herokuapp.com``` because it's a popular practice website for automation and testing. I leave **recordingOutputFile:** as **recording.xml** and **schemeToRecord:** as **https** because it is the correct **protocol** for this website. Then I press **Create** again. The **hostToRecord:** address is automatically applied to **elements** like **User Defined Variables** and **HTTP Request Defaults**, which is very convenient.
 
-At this stage you can name your **Test Plan** as you wish. It is probably good practice to do so, so I select **Test Plan** and write **Example Plan** to the **Name:** field. Now is also a good time to save, so I open **File** again, select **Save Test Plan as**, choose the destination, and **Save** my **Example Plan.jmx**. I save my **JMeter files** to ```C:\Users\Business\JMeter Scripts```, but the location is personal preference.
+At this stage you can name your **Test Plan** as you wish. It is probably good practice to do so, so I select **Test Plan** and write ```Example Plan``` to the **Name:** field. Now is also a good time to save, so I open **File** again, select **Save Test Plan as**, choose the destination, and **Save** my **Example Plan.jmx**. I save my **JMeter files** to ```C:\Users\Business\JMeter Scripts```, but the location is personal preference.
 
 Next up, I select the **HTTP(S) Test Script Recorder** element and press **Start**. This opens a window notifying about a **certificate** being created. I press **OK** and another window called **Recorder: Transactions Control** opens. I press **Stop** because I first need to import the new **certificate** to the **web browser** I'll be using for recording. I have decided to use **Google Chrome** for recording because it is not my main browser and I have cleared its **browsing data**.
 
@@ -53,7 +53,7 @@ I open **Google Chrome** and paste ```chrome://certificate-manager/``` into the 
 _ JMeter Root CA for recording (INSTALL ONLY IF IT S YOURS)
 ```
 
-Remaining in **Google Chrome**, I open the **three-dot menu** from the top-right corner, open **Settings**, open **System**, and select **Open your computer's proxy settings**. This opens the **Proxy** settings in **Windows 11**. I press **Set up** under **Manual proxy setup**, turn **Use a proxy server** as **On**, designate ```127.0.0.1``` as the **Proxy IP address**, designate ```8888``` as the **Port**, and press **Save**.
+Remaining in **Google Chrome**, I open the **three-dot menu** from the top-right corner, open **Settings**, open **System**, and select **Open your computer's proxy settings**. This opens the **Proxy** settings in **Windows 11**. I press **Set up** under **Manual proxy setup**, turn **Use a proxy server** as **On**, enter ```127.0.0.1``` as the **Proxy IP address**, enter ```8888``` as the **Port**, and press **Save**.
 
 
 ## Recording Test Scripts
