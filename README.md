@@ -58,7 +58,15 @@ Remaining in **Google Chrome**, I open the **three-dot menu** from the top-right
 - ```127.0.0.1``` is the **loopback address**, meaning it points back to your own computer. It is commonly used as the equivalent of **localhost**.
 - ```8888``` is the **port number** where **JMeter**'s **HTTP(S) Test Script Recorder** listens for **proxy connections**.
 
-Now I can start the actual recording part after my configured **proxy** has been turned on. I go back to **JMeter** and **HTTP(S) Test Script Recorder**, press **▶ Start**, and enter ```1``` as the first **Transaction name** in the **Recorder: Transactions Control**. I think this is a good way to identify every action during the recording, because there can be multiple **samplers** per action. In **JMeter**, a **sampler** is the component that actually sends a request or performs an action and records the response.
+Now I can start the actual recording part after my configured **proxy** has been turned on. I go back to **JMeter** and **HTTP(S) Test Script Recorder**, press **▶ Start**, and enter ```1``` as the first **Transaction name** in the **Recorder: Transactions Control**. I think this is a good way to identify every action during the recording, because there can be multiple **samplers** per action. Later you can name the **transactions** more descriptively, if you wish. In **JMeter**, a **sampler** is the component that actually sends a request or performs an action and records the response. It is also very important to determine carefully what actions you will be taking during a recording of a script. In real-life situations you would usually determine the actions of a **test case**, like a **script**, together with the **client**. For example: go through this specific sequence on a website, click these pages, log in with these credentials, etc.
+
+I will determine a very simple **test case** for my first **script**, because I really just want to see if **JMeter** recording is working correctly.
+
+1. Enter the ```https://the-internet.herokuapp.com/``` address.
+2. Click **Basic Auth** link.
+3. Enter **Username** and **Password** (both are **admin**), and click **Sign in**.
+
+After signing in, no more actions during this recording, but there is a greeting message (**Congratulations! You must have the proper credentials.**) that we can later use to check whether the script can access this page.
 
 
 ## Recording Test Scripts
