@@ -77,7 +77,7 @@ I will return to the topic of **regex** later during this project.
 
 Back to the recording: I managed to seemingly successfully record the previously determined **test case**, and the **script** looks clean since I excluded the unwanted **URL patterns**. In **JMeter** under the **element** called **Recording Controller**, you can see in real time when **Transaction Controllers** are created during recordings. Under **Transaction Controllers** there can be elements like **HTTP Requests** and **HTTP Authorization Managers**, among many others. I have **three** **Transaction Controllers** named ```1```, ```2```, and ```3```, so now it's easy to remember what each of those do.
 
-Now I can test if my script works, and in theory it should because there aren't any **dynamic values** present. I open a **listener** called **View Results Tree** under an **element** called **Thread Group**. It lets you inspect the results of individual **samplers** in a test. In **JMeter** there is the **toolbar** on top of the user interface, and I press the **▶** (**Start**) button to run my script while having the **View Results Tree** open.
+Now I can test if my script works, and in theory it should because there aren't any **dynamic values** present in this script. I open a **listener** called **View Results Tree** under an **element** called **Thread Group**. It lets you inspect the results of individual **samplers** in a test. In **JMeter** there is the **toolbar** on top of the user interface, and I press the **▶** (**Start**) button to run my script while having the **View Results Tree** open. All **samplers** return **green check marks** (**✅**), which indicates that the script is working. 
 
 
 ## Recording Test Scripts
