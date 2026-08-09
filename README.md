@@ -68,7 +68,12 @@ I will determine a very simple **test case** for my first **script**, because I 
 
 After signing in, no more actions during this recording, but there is a greeting message (**Congratulations! You must have the proper credentials.**) that we can later use to check whether the script can access this page. All in all, **3** **transactions**.
 
-At this point I remembered something important. Before recording, I'm going to exclude some **URL Patterns**, like **Google's services**, since I don't want to test those. I go to ****, open the **Requests Filtering** tab, and **Add** ```android\.clients\.google\.com.*``` and ```www\.google\.com.*``` under **URL Patterns to Exclude**. These use **regular expressions** (**regex**) that are patterns that describe what text you want to find or match. For example: ```\.``` = a literal dot and ```.*``` = any number of any characters. I will return to the topic of **regex** later during this project.
+At this point I remembered something important. Before recording, I'm going to exclude some **URL Patterns**, like **Google's services**, since I don't want to test those. I go to **HTTP(S) Test Script Recorder**, open the **Requests Filtering** tab, and **Add** ```android\.clients\.google\.com.*``` and ```www\.google\.com.*``` under **URL Patterns to Exclude**. These use **regular expressions** (**regex**) that are patterns that describe what text you want to find or match. For example:
+
+- ```\.``` = a literal dot
+- ```.*``` = any number of any characters
+
+I will return to the topic of **regex** later during this project.
 
 
 ## Recording Test Scripts
