@@ -58,7 +58,7 @@ Remaining in **Google Chrome**, I open the **three-dot menu** from the top-right
 - ```127.0.0.1``` is the **loopback address**, meaning it points back to your own computer. It is commonly used as the equivalent of **localhost**.
 - ```8888``` is the **port number** where **JMeter**'s **HTTP(S) Test Script Recorder** listens for **proxy connections**.
 
-Now I can start the actual recording part after my configured **proxy** has been turned on. I go back to **JMeter** and **HTTP(S) Test Script Recorder**, press **▶ Start**, and enter ```1``` as the first **Transaction name** in the **Recorder: Transactions Control**. I think this is a good way to identify every action during the recording, because there can be multiple **samplers** per action. Later you can name the **transactions** more descriptively, if you wish. In **JMeter**, a **sampler** is the component that actually sends a request or performs an action and records the response. It is also very important to determine carefully what actions you will be taking during a recording of a script. In real-life situations you would usually determine the actions of a **test case**, like a **script**, together with the **client**. For example: go through this specific sequence on a website, click these pages, log in with these credentials, etc.
+Now I can start the actual recording part after my configured **proxy** has been turned on. It is worth noting that when this **proxy** is on, you cannot use internet regularly, but you only need the **proxy** on during the **recording phase**. I go back to **JMeter** and **HTTP(S) Test Script Recorder**, press **▶ Start**, and enter ```1``` as the first **Transaction name** in the **Recorder: Transactions Control**. I think this is a good way to identify every action during the recording, because there can be multiple **samplers** per action. Later you can name the **transactions** more descriptively, if you wish. In **JMeter**, a **sampler** is the component that actually sends a request or performs an action and records the response. It is also very important to determine carefully what actions you will be taking during a recording of a script. In real-life situations you would usually determine the actions of a **test case**, like a **script**, together with the **client**. For example: go through this specific sequence on a website, click these pages, log in with these credentials, etc.
 
 I will determine a very simple **test case** for my first **script**, because I really just want to see if **JMeter** recording is working correctly.
 
@@ -68,12 +68,14 @@ I will determine a very simple **test case** for my first **script**, because I 
 
 After signing in, no more actions during this recording, but there is a greeting message (**Congratulations! You must have the proper credentials.**) that we can later use to check whether the script can access this page. All in all, **3** **transactions**.
 
-At this point I remembered something important. Before recording, I'm going to exclude some **URL Patterns**, like **Google's services**, since I don't want to test those. I go to **HTTP(S) Test Script Recorder**, open the **Requests Filtering** tab, and **Add** ```android\.clients\.google\.com.*``` and ```www\.google\.com.*``` under **URL Patterns to Exclude**. These use **regular expressions** (**regex**) that are patterns that describe what text you want to find or match. For example:
+At this point I remembered something important. Before recording, I'm going to exclude some **URL patterns**, like **Google's services**, since I don't want to test those. I go to **HTTP(S) Test Script Recorder**, open the **Requests Filtering** tab, and **Add** ```android\.clients\.google\.com.*``` and ```www\.google\.com.*``` under **URL Patterns to Exclude**. These use **regular expressions** (**regex**) that are patterns that describe what text you want to find or match. For example:
 
 - ```\.``` = a literal dot
 - ```.*``` = any number of any characters
 
 I will return to the topic of **regex** later during this project.
+
+Back to the recording: I managed to seemingly successfully record the previously determined **test case**, and the **script** looks clean since I excluded the unwanted **URL patterns**. In **JMeter** under the **element** called **Recording Controller**, you can see in real time when **Transaction Controllers** are created during recordings. Under **Transaction Controllers** there can be elements like **HTTP Requests** and **HTTP Authorization Managers**, among many others. I have **three** **Transaction Controllers** named ```1```, ```2```, and ```3```, so now it's easy to see what each of those do.
 
 
 ## Recording Test Scripts
