@@ -66,7 +66,7 @@ I will determine a very simple **test case** for my first **script**, because I 
 2. Click **Basic Auth** link.
 3. Enter **Username** and **Password** (both are **admin**), and click **Sign in**.
 
-After signing in, no more actions during this recording, but there is a greeting message (**Congratulations! You must have the proper credentials.**) that we can later use to check whether the script can access this page.
+After signing in, no more actions during this recording, but there is a greeting message (**Congratulations! You must have the proper credentials.**) that we can later use to check whether the script can access this page. All in all, **3** **transactions**.
 
 
 ## Recording Test Scripts
