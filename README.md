@@ -88,9 +88,9 @@ This is now a simple, working **JMeter** script. Of course, we are only using **
 - **Loop Count:** = how many times a **Vuser** will run the script. For example, if you have **2 Vusers** and **Loop Count** set to **2**, the script will be executed **4 times in total**. The **Loop Count** can also be set to **Infinite**, meaning the script will, in theory, **run indefinitely**.
 - **Same user on each iteration** = determines whether **Vusers** are reused between **iterations** or treated as **new users**.
 
-For the scope of this project, though, I am not going to delve more deeply into how actual **performance tests** are configured. At least not at this stage. The main focus of this project is to get the scripts running with **1 or a few Vusers** at most. This reflects the real-life workflow: you don't perform an actual **performance test** until the scripts have been verified to work.
+For the scope of this project, though, I am not going to delve more deeply into how actual **performance tests** are configured. At least not at this stage. The main focus of this project is to get the scripts running with **1 or a few Vusers** at most. This reflects the **real-life workflow**: you don't perform an **actual performance test** until the scripts have been **verified to work**.
 
-This concludes this chapter about creating a **Test Plan** and recording a **Test Script**.
+This concludes this chapter about **creating a Test Plan** and **recording a Test Script**.
 
 
 ## Recording Test Scripts
