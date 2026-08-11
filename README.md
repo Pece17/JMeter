@@ -81,6 +81,12 @@ Now I can test if my script works, and in theory it should because there aren't 
 
 I open the first **Response Assertion** and **Add** text ```Welcome to the-internet``` under **Patterns to Test**. I don't touch other settings. To the second **Response Assertion** I add the previously noticed text ```Congratulations! You must have the proper credentials.```. I clear the previous **View Results Tree** results by pressing the **gear and broom** (**Clear**) icon in the **top toolbar**, and I run the script again successfully. You can even test what happens if an **assertion** fails by purposely writing a wrong text into a **Response Assertion**.
 
+This is now a simple, working **JMeter** script. Of course, we are only using **1 Thread** or **Vuser** (**virtual user**), which can be seen by selecting **Thread Group**. In this **element**, you can configure:
+
+- **Number of Threads (users):**
+- **Ramp-up period (seconds):** = how quickly **JMeter** starts all the **threads** (**Vusers**) in a **thread group**. For example, 100 **virtual users** + 100-second **ramp-up** = approximately **1 vuser started per second**.
+- **Loop Count:** = how many times a **Vuser** will run the script. For example, if you have **2 Vusers** and **Loop Count** set as **2**, the script will be executed **4 times**. The **Loop Count** can also be set as **Infinite**, so the script will in theory **run infinitely**.
+
 
 ## Recording Test Scripts
 
