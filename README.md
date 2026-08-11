@@ -81,14 +81,16 @@ Now I can test if my script works, and in theory it should because there aren't 
 
 I open the first **Response Assertion** and **Add** text ```Welcome to the-internet``` under **Patterns to Test**. I don't touch other settings. To the second **Response Assertion** I add the previously noticed text ```Congratulations! You must have the proper credentials.```. I clear the previous **View Results Tree** results by pressing the **gear and broom** (**Clear**) icon in the **top toolbar**, and I run the script again successfully. You can even test what happens if an **assertion** fails by purposely writing a wrong text into a **Response Assertion**.
 
-This is now a simple, working **JMeter** script. Of course, we are only using **1 Thread** or **Vuser** (**virtual user**), which can be seen by selecting **Thread Group**. The key settings you can configure in this **element** are:
+This is now a simple, working **JMeter** script. Of course, we are only using **1 Thread** or **Vuser** (**virtual user**), which can be seen by selecting **Thread Group**. The **key settings** you can configure in this **element** are:
 
 - **Number of Threads (users):**
-- **Ramp-up period (seconds):** = how quickly **JMeter** starts all the **threads** (**Vusers**) in a **thread group**. For example, 100 **virtual users** + 100-second **ramp-up** = approximately **1 Vuser started per second**.
+- **Ramp-up period (seconds):** = how quickly **JMeter** starts all the **threads** (**Vusers**) in a **thread group**. For example, **100 virtual users** + **100-second ramp-up** = approximately **1 Vuser started per second**.
 - **Loop Count:** = how many times a **Vuser** will run the script. For example, if you have **2 Vusers** and **Loop Count** set to **2**, the script will be executed **4 times in total**. The **Loop Count** can also be set to **Infinite**, meaning the script will, in theory, **run indefinitely**.
-- **Same user on each iteration** = determines whether **Vusers** are reused between **iterations** or treated as new users.
+- **Same user on each iteration** = determines whether **Vusers** are reused between **iterations** or treated as **new users**.
 
-For the scope of this project, though, I am not going to delve more deeply into how actual performance tests are configured. At least not yet. The main focus of this project is to get the scripts running with **1 or a few Vusers** at most. This reflects the real-life workflow: you don't perform an actual performance test until the scripts have been verified to work.
+For the scope of this project, though, I am not going to delve more deeply into how actual **performance tests** are configured. At least not at this stage. The main focus of this project is to get the scripts running with **1 or a few Vusers** at most. This reflects the real-life workflow: you don't perform an actual **performance test** until the scripts have been verified to work.
+
+This concludes this chapter about creating a **Test Plan** and recording a **Test Script**.
 
 
 ## Recording Test Scripts
