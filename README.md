@@ -121,6 +121,11 @@ I open **JMeter** and create a new **Recording** template using ```authenticatio
 
 After a few **dry runs**, I'm ready to record the actual script, so I **Remove** all the practice **Transaction Controllers** under **Recording Controller**, **delete the browsing data** of **Google Chrome** just in case, and turn on my **proxy server**.
 
+The recording goes smoothly. I play the script a few times, and there aren't any apparent errors, but **this doesn't mean the script is working properly yet**. In fact, it would be problematic if it worked properly because I have not **correlated** the **dynamic XSRF token** yet.
+
+**Correlation** is the process of **extracting a dynamic value** from a **previous response** and **reusing it in a later request**. In this example, **JMeter** must **extract** the dynamically generated **XSRF token** from the **login page** and then use that same **token** when sending the **login request**.
+
+The first modification I will make to the script is to add **4 Response Assertions**, with **1** inside each **Transaction Controller**. This way I can actually **verify** whether all the **pages are loading correctly**.
 
 
 ## Recording Test Scripts
