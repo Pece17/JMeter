@@ -132,7 +132,7 @@ The first modification I will make to the script is to add **4 Response Assertio
 3. **Response Assertion** = ```You will be logged in for the next 10 minutes.```
 4. **Response Assertion** = ```A simple playground for developers and security engineers```
 
-> In **View Results Tree**, you can use the **Search:** function to find which **Samplers** contain the **text you are looking for**. There are also options for **Case sensitive** and **Regular exp.** searches. After this, you can use the **Find** function within each **Sampler** to **locate the exact position** of the **text you are looking for**, which can be useful when creating **Response Assertions**. Alternatively, you can **right-click** and select **View page source** (or press **Ctrl+U**) in your **web browser** to look for **Response Assertions**.
+> In **View Results Tree**, you can use the **Search:** function to find which **Samplers** contain the **text you are looking for**. There are also options for **Case sensitive** and **Regular exp.** searches. After this, you can use the **Find** function within each **Sampler** to **locate the exact position** of the **text you are looking for**, which can be useful when creating **Response Assertions**. Alternatively, you can **right-click** and select **View page source** (or press **Ctrl+U**) in your **web browser** to look for the **text you want to use in a Response Assertion**.
 
 
 ## Recording Test Scripts
