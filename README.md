@@ -117,8 +117,9 @@ I open **JMeter** and create a new **Recording** template using ```authenticatio
 - ```content-autofill\.googleapis\.com.*```
 - ```passwordsleakcheck-pa\.googleapis\.com.*```
 
-> It is good practice to do a few "**dry runs**" with the **HTTP(S) Test Script Recorder** before recording the final "product", because you can check which unnecessary **URL patterns** you should exclude, and you will be more confident in executing the **test case** correctly.
+> It is good practice to do a few "**dry runs**" with the **HTTP(S) Test Script Recorder** before recording the final "product", because you can check which unnecessary **URL patterns** should be excluded, and you will be more confident in executing the **test case** correctly.
 
+After a few **dry runs**, I'm ready to record the actual script, so I **delete the browsing data** of **Google Chrome** just in case, and turn on my **proxy server**.
 
 ## Recording Test Scripts
 
