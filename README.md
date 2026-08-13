@@ -114,7 +114,8 @@ I open **JMeter** and create a new **Recording** template using ```authenticatio
 
 - ```android\.clients\.google\.com.*```
 - ```www\.google\.com.*```
-- 
+- ```android\.clients\.google\.com.*```
+- ```content-autofill\.googleapis\.com.*```
 
 
 ## Recording Test Scripts
