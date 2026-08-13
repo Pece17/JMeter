@@ -114,8 +114,10 @@ I open **JMeter** and create a new **Recording** template using ```authenticatio
 
 - ```android\.clients\.google\.com.*```
 - ```www\.google\.com.*```
-- ```android\.clients\.google\.com.*```
 - ```content-autofill\.googleapis\.com.*```
+- ```passwordsleakcheck-pa\.googleapis\.com.*```
+
+> It is good practice to do a few "**dry runs**" with the **HTTP(S) Test Script Recorder** before recording the final "product", because you can check which unnecessary **URL patterns** you should exclude, and you will be more confident in executing the **test case** correctly.
 
 
 ## Recording Test Scripts
