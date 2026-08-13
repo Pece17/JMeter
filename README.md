@@ -82,6 +82,8 @@ Now I can test if my script works, and in theory it should because there aren't 
 
 I open the first **Response Assertion** and **Add** text ```Welcome to the-internet``` under **Patterns to Test**. I don't touch other settings. To the second **Response Assertion** I add the previously noticed text ```Congratulations! You must have the proper credentials.```. I clear the previous **View Results Tree** results by pressing the **gear and broom** (**Clear**) icon in the **top toolbar**, and I run the script again successfully. You can even test what happens if an **assertion** fails by purposely writing a wrong text into a **Response Assertion**.
 
+> Once a **test script** has been recorded, the **HTTP(S) Test Script Recorder** can be deleted from a **Test Plan**, as it is **only needed during the recording process**. Howevers, **it is not absolutely necessary** because the **HTTP(S) Test Script Recorder** is **Disabled** by default. You can **Disable** and **Enable** **JMeter Elements** by **right-clicking** on them and selecting **Disable** or **Enable**.
+
 This is now a simple, working **JMeter** script. Of course, we are only using **1 Thread** or **Vuser** (**virtual user**), which can be seen by selecting **Thread Group**. The **key settings** you can configure in this **element** are:
 
 - **Number of Threads (users):**
