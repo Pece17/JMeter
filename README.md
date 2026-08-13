@@ -63,7 +63,7 @@ Now I can start the actual recording part after my configured **proxy** has been
 
 I will determine a very simple **test case** for my first **script**, because I really just want to see if **JMeter** recording is working correctly.
 
-1. Enter the ```https://the-internet.herokuapp.com/``` address.
+1. Enter the https://the-internet.herokuapp.com/ address.
 2. Click **Basic Auth** link.
 3. Enter **Username** and **Password** (both are **admin**), and click **Sign in**.
 
@@ -97,6 +97,14 @@ This concludes this chapter about **creating a Test Plan** and **recording a Tes
 ## Recording and Correlating a Test Script with a Dynamic Token
 
 I want to up the difficulty for my next example **JMeter script**, and I'm specifically interested in **dynamic tokens**. A **dynamic token** is a value that is generated or changes during a session or request flow, instead of being **static** or **unchanging**. In the upcoming example, the **dynamic token** is an **XSRF token**, which is used as a security measure to help protect against **cross-site request forgery** (**CSRF**) attacks. Per [Wikipedia](https://en.wikipedia.org/wiki/Cross-site_request_forgery), **CSRF** is a type of **malicious exploit** of a website or web application where **unauthorized commands** are submitted from a user that the web application trusts. **CSRF** and **XSRF** are two names for the same type of attack, and **XSRF**/**CSRF tokens** are a defense against that attack.
+
+For this exercise I'm using the following website: https://authenticationtest.com/. I will determine the **steps** of this **test case** at this point, before creating a new **JMeter Test Plan**:
+
+1. Enter the https://authenticationtest.com/ address.
+2. Click the **XSRF Challenge** button under **Challenges**.
+3. Enter the **E-Mail Address** (```xsrf@authenticationtest.com```) and **Password** (```pa$$w0rd```), do not touch the **XSRF Token**, and click **Log In**.
+4. Verify success by seeing **Login Success** and a **longer message**, and click **Sign Out**.
+5. Verify that you have returned to the starting page (https://authenticationtest.com/).
 
 
 ## Recording Test Scripts
