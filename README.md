@@ -108,6 +108,14 @@ For this exercise I'm using the following website: https://authenticationtest.co
 4. Verify success by seeing **Login Success** and a **longer message**, and click **Sign Out**.
 5. Verify that you have returned to the starting page (https://authenticationtest.com/).
 
+In actuality, there will only be **4 transactions** in this recording.
+
+I open **JMeter** and create a new **Recording** template using ```authenticationtest.com``` as the **hostToRecord** and ```https``` as the **schemeToRecord**. I name the **Test Plan** as **XSRF_Plan** and save this **XSRF_Plan.jmx** file to my regular destination. Before recording, I exclude the following **URL patterns** to avoid cluttering my script:
+
+- ```android\.clients\.google\.com.*```
+- ```www\.google\.com.*```
+- 
+
 
 ## Recording Test Scripts
 
