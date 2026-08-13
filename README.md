@@ -125,14 +125,14 @@ The recording goes smoothly. I play the script a few times, and there aren't any
 
 **Correlation** is the process of **extracting a dynamic value** from a **previous response** and **reusing it in a later request**. In this example, **JMeter** must **extract** the dynamically generated **XSRF token** from the **login page** and then use that same **token** when sending the **login request**.
 
-The first modification I will make to the script is to add **4 Response Assertions**, with **1** inside each **Transaction Controller**. This way I can actually **verify** whether all the **pages are loading correctly**.
+The first modification I will make to the script is to add **4 Response Assertions**, with **1** inside each **Transaction Controller**. This way I can actually **verify** whether all the **expected pages are loading correctly**.
 
-1. **Response Assertion** = 
-2. **Response Assertion** =
-3. **Response Assertion** =
-4. **Response Assertion** =
+1. **Response Assertion** = ```A simple playground for developers and security engineers```
+2. **Response Assertion** = ```Forge Ahead!```
+3. **Response Assertion** = ```You will be logged in for the next 10 minutes.```
+4. **Response Assertion** = ```A simple playground for developers and security engineers```
 
-> In **View Results Tree**, you can use the **Search:** function to find which **Samplers** contain the text you are looking for. There are also options for **Case sensitive** and **Regular exp.** searches. After this, you can use the **Find** function within each **Sampler** to locate the exact position of the text you are looking for, which can be useful when creating **Response Assertions**.
+> In **View Results Tree**, you can use the **Search:** function to find which **Samplers** contain the **text you are looking for**. There are also options for **Case sensitive** and **Regular exp.** searches. After this, you can use the **Find** function within each **Sampler** to **locate the exact position** of the **text you are looking for**, which can be useful when creating **Response Assertions**. Alternatively, you can **right-click** and select **View page source** (or press **Ctrl+U**) in your **web browser** to look for **Response Assertions**.
 
 
 ## Recording Test Scripts
