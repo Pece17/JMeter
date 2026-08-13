@@ -7,6 +7,7 @@ A project for revisiting the basics of the **Apache JMeter** performance testing
 
 - [Software Installation and Setup](https://github.com/Pece17/JMeter#software-installation-and-setup)
 - [Creating a Test Plan and Recording a Test Script](https://github.com/Pece17/JMeter/blob/main/README.md#creating-a-test-plan-and-recording-a-test-script)
+- [Recording and Correlating a Test Script with a Dynamic Token](url)
 
 
 ## Software Installation and Setup
@@ -91,6 +92,11 @@ This is now a simple, working **JMeter** script. Of course, we are only using **
 For the scope of this project, though, I am not going to delve more deeply into how actual **performance tests** are configured. At least not at this stage. The main focus of this project is to get the scripts running with **1 or a few Vusers** at most. This reflects the **real-life workflow**: you don't perform an **actual performance test** until the scripts have been **verified to work**.
 
 This concludes this chapter about **creating a Test Plan** and **recording a Test Script**.
+
+
+## Recording and Correlating a Test Script with a Dynamic Token
+
+I want to up the difficulty for my next example **JMeter script**, and I'm specifically interested in **dynamic tokens**. A **dynamic token** is a value that is generated or changes during a session or request flow, instead of being **static** or **unchanging**. In the upcoming example, the **dynamic token** is an **XSRF token**, which is used as a security measure to help protect against **cross-site request forgery** (**CSRF**) attacks. **CSRF** is an attack where a malicious website tricks a user's browser into sending unauthorized requests to a website where the user is already authenticated.
 
 
 ## Recording Test Scripts
