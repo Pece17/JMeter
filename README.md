@@ -123,7 +123,7 @@ After a few **dry runs**, I'm ready to record the actual script, so I **Remove**
 
 The recording goes smoothly. I play the script a few times, and there aren't any apparent errors, but **this doesn't mean the script is working properly yet**. In fact, it would be problematic if it worked properly because I have not **correlated** the **dynamic XSRF token** yet.
 
-**Correlation** is the process of **extracting a dynamic value** from a **previous response** and **reusing it in a later request**. In this example, **JMeter** must **extract** the dynamically generated **XSRF token** from the **login page** and then use that same **token** when sending the **login request**.
+**Correlation** is the process of **extracting a dynamic value** from a **previous response** and **reusing it in a later request**. In this example, **JMeter** must **extract** the dynamically generated **XSRF token** from the **XSRF Challenge page's response** and then use that same **token** when sending the **login request**.
 
 The first modification I will make to the script is to add **4 Response Assertions**, with **1** inside each **Transaction Controller**. This way I can actually **verify** whether all the **expected pages are loading correctly**.
 
@@ -133,6 +133,12 @@ The first modification I will make to the script is to add **4 Response Assertio
 4. **Response Assertion** = ```A simple playground for developers and security engineers```
 
 > In **View Results Tree**, you can use the **Search:** function to find which **Samplers** contain the **text you are looking for**. There are also options for **Case sensitive** and **Regular exp.** searches. After this, you can use the **Find** function within each **Sampler** to **locate the exact position** of the **text you are looking for**, which can be useful when creating **Response Assertions**. Alternatively, you can **right-click** and select **View page source** (or press **Ctrl+U**) in your **web browser** to look for the **text you want to use in a Response Assertion**.
+
+Now when I run the script, all the **Response Assertions** fail, which is actually surprising because it means even the **first page** in my **test case** (https://authenticationtest.com/) is **not returning** the expected **Response Body**. I open **View Results Tree**, select the **Sampler** that opens the **first page**, and select **Response Body** under **Response data** tab. The **Response Body** looks like this:
+
+```
+����q�J��˗�##Т���,�@��N���k��+��)Ȏy�̰s��2�%E!�ۏ=MT�q.���7���S�dy�F�֝N�������5����*�΁�X�_)������f�|���#�~b�~
+```
 
 
 ## Recording Test Scripts
