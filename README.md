@@ -127,6 +127,13 @@ The recording goes smoothly. I play the script a few times, and there aren't any
 
 The first modification I will make to the script is to add **4 Response Assertions**, with **1** inside each **Transaction Controller**. This way I can actually **verify** whether all the **pages are loading correctly**.
 
+1. **Response Assertion** = 
+2. **Response Assertion** =
+3. **Response Assertion** =
+4. **Response Assertion** =
+
+> In **View Results Tree**, you can use the **Search:** function to find which **Samplers** contain the text you are looking for. There are also options for **Case sensitive** and **Regular exp.** searches. After this, you can use the **Find** function within each **Sampler** to locate the exact position of the text you are looking for, which can be useful when creating **Response Assertions**.
+
 
 ## Recording Test Scripts
 
