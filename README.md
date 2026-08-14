@@ -146,6 +146,19 @@ The **Response Body** appears as seemingly **garbled**/**binary data**. These sy
 
 > **Content encoding** specifies how the **content** of an **HTTP response** is **encoded** or **compressed** for **transmission between the server and client**.
 
+In the **Response headers**, I find these relevant lines:
+
+- ```Content-Type: text/html; charset=UTF-8``` = specifies that the **response** contains **HTML content** and uses **UTF-8 character encoding**.
+- ```Content-Encoding: zstd``` = specifies that the **response content** is **compressed** using **Zstandard** (**zstd**), a **data compression algorithm**, before being sent.
+
+Therefore, I can conclude that there **is not** necessarily an **error** in this **response** or other **responses**, per se, but the **zstd content encoding** is **causing an issue** for this particular **JMeter script**. To get this **script** working correctly, I need to **configure** the **HTTP Requests** to **request a different content encoding**.
+
+First, I will check which **content encodings** the **HTTP Request** that **loads the first page** accepts. I open **View Results Tree**, select the **HTTP Request**, and select **Request Headers** under the **Request** tab. Therer, I find the following relevant line:
+
+```
+Accept-Encoding: gzip, deflate, br, zstd
+```
+
 
 ## Recording Test Scripts
 
