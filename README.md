@@ -175,7 +175,7 @@ Now I run the script again, and the first **HTTP Request** successfully returns 
 </div>
 ```
 
-The next logical step is to **apply the same change** to all the other **HTTP Header Managers**: change the **Value** of ```Accept-Encoding``` to ```identity```. After that, most of the **HTTP Requests** are successful. However, the **Response Assertions** for all the **font requests** inside the **1st Transaction Controller**, from the **servers** ```fonts.googleapis.com``` and ```fonts.gstatic.com```, are failing. In **View Results Tree**, the **Assertion results** of the **Response Assertions** look like this:
+The next logical step is to **apply the same change** to all the other **HTTP Header Managers**: change the **Value** of ```Accept-Encoding``` to ```identity```. After that, most of the **HTTP Requests** are successful. However, the **Response Assertions** for all the **font requests** inside the **1st Transaction Controller**, from **servers** ```fonts.googleapis.com``` and ```fonts.gstatic.com```, are failing. In **View Results Tree**, the **Assertion results** of the **Response Assertions** look like this:
 
 ```
 Assertion error:false
@@ -183,7 +183,7 @@ Assertion failure:true
 Assertion failure message:Test failed: text expected to contain /A simple playground for developers and security engineers/
 ```
 
-This is expected, because these **font requests** do not contain the **text the Response Assertion is looking for**. It is due to **my previous mistake** of placing the **Response Assertion** inside the whole **Transaction Controller**, instead of inside the specific **HTTP Request**.
+This is expected, because these **font requests** do not contain the **text the Response Assertion is looking for**. This is due to **my previous mistake** of placing the **Response Assertion** inside the entire **Transaction Controller**, instead of inside the specific **HTTP Request**.
 
 
 ## Recording Test Scripts
