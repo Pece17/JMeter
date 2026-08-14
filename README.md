@@ -132,7 +132,7 @@ The first modification I will make to the script is to add **4 Response Assertio
 3. **Response Assertion** = ```You will be logged in for the next 10 minutes.```
 4. **Response Assertion** = ```A simple playground for developers and security engineers```
 
-> In **View Results Tree**, you can use the **Search:** function to find which **Samplers** contain the **text you are looking for**. There are also options for **Case sensitive** and **Regular exp.** searches. After this, you can use the **Find** function within each **Sampler** to **locate the exact position** of the **text you are looking for**, which can be useful when creating **Response Assertions**. Alternatively, you can **right-click** and select **View page source** (or press **Ctrl+U**) in your **web browser** to look for the **text you want to use in a Response Assertion**.
+> In **View Results Tree**, you can use the **Search** function to find which **Samplers** contain the **text you are looking for**. There are also options for **Case sensitive** and **Regular exp.** searches. After this, you can use the **Find** function within each **Sampler** to **locate the exact position** of the **text you are looking for**, which can be useful when creating **Response Assertions**. Alternatively, you can **right-click** and select **View page source** (or press **Ctrl+U**) in your **web browser** to look for the **text you want to use in a Response Assertion**.
 
 Now when I run the script, all the **Response Assertions** fail, which is actually surprising because it means even the **first page** (https://authenticationtest.com/) in my **test case** is **not returning** the expected, readable **Response Body**. I open **View Results Tree**, select the **Sampler** that **loads the first page**, and select **Response Body** under the **Response data** tab. For some reason, I was unable to copy all of the content in the **Response Body**, but it just looks like more of these symbols:
 
@@ -140,7 +140,7 @@ Now when I run the script, all the **Response Assertions** fail, which is actual
 ����q�J��˗�##Т���,�@��N���k��+��)Ȏy�̰s��2�%E!�ۏ=MT�q.���7���S�dy�F�֝N�������5����*�΁�X�_)������f�|���#�~b�~
 ```
 
-The **Response Body** appears as seemingly **garbled**/**binary data**. These symbols **are not actual text from the website**. They indicate that **encoded** or **compressed response data** is being **interpreted as text** by **JMeter**. The **web browser handles the response correctly** and **displays the expected page normally**.
+The **Response Body** appears as seemingly **garbled**/**binary data**. These symbols **are not actual text from the website**. They indicate that **encoded** or **compressed response data** is being **interpreted as text** by **JMeter**. The **web browser handles the response correctly**, and both the **webpage** and its **source code** are **displayed as expected**.
 
 
 ## Recording Test Scripts
