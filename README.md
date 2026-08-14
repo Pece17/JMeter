@@ -161,7 +161,7 @@ Accept-Encoding: gzip, deflate, br, zstd
 
 The next step is to **modify** the **HTTP Request headers** to **stop requesting** **zstd content encoding**. I will naturally start with the **HTTP Request** that **loads the first page**. **JMeter** has automatically created an **HTTP Header Manager** as a **child element** of each **HTTP Request**, and I open the first one.
 
-Under the **Name:** column I find ```Accept-Encoding```, and under the corresponding **Value** column, I find ```gzip, deflate, br, zstd```. I **change** the **Value** as ```identity```. ```identity``` is the **HTTP content-coding value** that indicates **no content encoding should be applied**. In other words, you are **telling the server** to **send the response without compression**.
+Under the **Name:** column I find ```Accept-Encoding```, and under the corresponding **Value** column, I find ```gzip, deflate, br, zstd```. I **change** the **Value** to ```identity```. ```identity``` is the **HTTP content-coding value** that indicates **no content encoding should be applied**. In other words, you are **telling the server** to **send the response without compression**.
 
 Now I run the script again, and the first **HTTP Request** successfully returns **readable source code**. The **1st Response Assertion** also works now, because the **text it is looking for** can be **found** in the **source code**:
 
@@ -175,7 +175,7 @@ Now I run the script again, and the first **HTTP Request** successfully returns 
 </div>
 ```
 
-The next logical step is to **apply the same change** to all the other **HTTP Header Managers**: change the **Value** of ```Accept-Encoding``` to ```identity```. After that, most of the **HTTP Requests** return **successfully** when I run the script. However, the **Response Assertions** for all the **font requests** inside the **1st Transaction Controller** (from **servers** ```fonts.googleapis.com``` and ```fonts.gstatic.com```) are failing. In **View Results Tree**, the **Assertion results** of the **Response Assertions** look like this:
+The next logical step is to **apply the same change** to all the other **HTTP Header Managers**: change the **Value** of ```Accept-Encoding``` to ```identity```. After that, most of the **HTTP Requests** execute **successfully** when I run the script. However, the **Response Assertions** for all the **font requests** inside the **1st Transaction Controller** (from **servers** ```fonts.googleapis.com``` and ```fonts.gstatic.com```) are failing. In **View Results Tree**, the **Assertion results** of the **Response Assertions** look like this:
 
 ```
 Assertion error:false
