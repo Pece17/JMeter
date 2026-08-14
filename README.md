@@ -153,11 +153,15 @@ In the **Response headers**, I find these relevant lines:
 
 Therefore, I can conclude that there **is not** necessarily an **error** in this **response** or other **responses**, per se, but the **zstd content encoding** is **causing an issue** for this particular **JMeter script**. To get this **script** working correctly, I need to **configure** the **HTTP Requests** to **request a different content encoding**.
 
-First, I will check which **content encodings** the **HTTP Request** that **loads the first page** accepts. I open **View Results Tree**, select the **HTTP Request**, and select **Request Headers** under the **Request** tab. Therer, I find the following relevant line:
+First, I will check which **content encodings** the **HTTP Request** that **loads the first page** accepts. I open **View Results Tree**, select the **HTTP Request**, and select **Request Headers** under the **Request** tab. There, I find the following relevant line:
 
 ```
 Accept-Encoding: gzip, deflate, br, zstd
 ```
+
+The next step is to **modify** the **HTTP Request headers** to **stop requesting** **zstd content encoding**. I will naturally start with the **HTTP Request** that **loads the first page**. **JMeter** has automatically created an **HTTP Header Manager** as a **child element** of each **HTTP Request**, and I open the first one.
+
+Under the **Name:** column I find ```Accept-Encoding```, and under the corresponding **Value** column, I find ```gzip, deflate, br, zstd```. I **change** the **Value** as ```identity```. ```identity``` is the **HTTP content-coding value** that indicates **no content encoding should be applied**. In other words, you are **telling the server** to **send the response without compression**.
 
 
 ## Recording Test Scripts
