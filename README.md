@@ -175,7 +175,7 @@ Now I run the script again, and the first **HTTP Request** successfully returns 
 </div>
 ```
 
-The next logical step is to **apply the same change** to all the other **HTTP Header Managers**: change the **Value** of ```Accept-Encoding``` to ```identity```. After that, most of the **HTTP Requests** are successful. However, the **Response Assertions** for all the **font requests** inside the **1st Transaction Controller**, from **servers** ```fonts.googleapis.com``` and ```fonts.gstatic.com```, are failing. In **View Results Tree**, the **Assertion results** of the **Response Assertions** look like this:
+The next logical step is to **apply the same change** to all the other **HTTP Header Managers**: change the **Value** of ```Accept-Encoding``` to ```identity```. After that, most of the **HTTP Requests** return **successfully** when I run the script. However, the **Response Assertions** for all the **font requests** inside the **1st Transaction Controller** (from **servers** ```fonts.googleapis.com``` and ```fonts.gstatic.com```) are failing. In **View Results Tree**, the **Assertion results** of the **Response Assertions** look like this:
 
 ```
 Assertion error:false
@@ -183,7 +183,11 @@ Assertion failure:true
 Assertion failure message:Test failed: text expected to contain /A simple playground for developers and security engineers/
 ```
 
-This is expected, because these **font requests** do not contain the **text the Response Assertion is looking for**. This is due to **my previous mistake** of placing the **Response Assertion** inside the entire **Transaction Controller**, instead of inside the specific **HTTP Request**.
+This is expected, because these **font requests** do not contain the **text** the **Response Assertion is looking for**. This is due to **my previous mistake** of placing the **Response Assertion** inside the entire **Transaction Controller**, instead of inside the specific **HTTP Request**.
+
+> It is good practice to place **Response Assertions** under **Samplers**, such as **HTTP Requests**, instead of under **Transaction Controllers**, which can contain multiple **Samplers**.
+
+I place all **4 Response Assertions** under their respective **HTTP Requests**, and run the script once again. This time, **only** the **3rd Transaction Controller** fails. This is **expected** because I have not yet **correlated the XSRF token**.
 
 
 ## Recording Test Scripts
