@@ -161,7 +161,7 @@ Accept-Encoding: gzip, deflate, br, zstd
 
 The next step is to **modify** the **HTTP Request headers** to **stop requesting** **zstd content encoding**. I will naturally start with the **HTTP Request** that **loads the first page**. **JMeter** has automatically created an **HTTP Header Manager** as a **child element** of each **HTTP Request**, and I open the first one.
 
-Under the **Name:** column I find ```Accept-Encoding```, and under the corresponding **Value** column, I find ```gzip, deflate, br, zstd```. I **change** the **Value** to ```identity```. ```identity``` is the **HTTP content-coding value** that indicates **no content encoding should be applied**. In other words, you are **telling the server** to **send the response without compression**.
+Under the **Name:** column I find ```Accept-Encoding```, and under the corresponding **Value** column, I find ```gzip, deflate, br, zstd```. I **change** the **Value** to ```identity```. ```identity``` is the **HTTP content-coding value** that indicates **no content encoding should be applied**. In other words, I am **telling the server** to **send the response without compression**.
 
 Now I run the script again, and the first **HTTP Request** successfully returns **readable source code**. The **1st Response Assertion** also works now, because the **text it is looking for** can be **found** in the **source code**:
 
