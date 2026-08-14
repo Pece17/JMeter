@@ -140,7 +140,7 @@ Now when I run the script, all the **Response Assertions** fail, which is actual
 ����q�J��˗�##Т���,�@��N���k��+��)Ȏy�̰s��2�%E!�ۏ=MT�q.���7���S�dy�F�֝N�������5����*�΁�X�_)������f�|���#�~b�~
 ```
 
-The **Response Body** appears as seemingly **garbled**/**binary data**. These symbols **are not actual text from the website**. They indicate that **encoded** or **compressed response data** is being **interpreted as text** by **JMeter**. The **web browser handles the response correctly**, and both the **webpage** and its **source code** are **displayed as expected**.
+The **Response Body** appears as seemingly **garbled**/**binary data**. These symbols **are not actual text from the website**. They indicate that **encoded** or **compressed response data** is being **interpreted as text** by **JMeter**. However, the **web browser handles the response correctly**, and both the **webpage** and its **source code** are **displayed as expected**.
 
 
 ## Recording Test Scripts
