@@ -175,7 +175,7 @@ Now I run the script again, and the first **HTTP Request** successfully returns 
 </div>
 ```
 
-The next logical step is to **apply the same change** to all the other **HTTP Header Managers**: change the **Value** of ```Accept-Encoding``` to ```identity```. After that, most of the **HTTP Requests** execute **successfully** when I run the script. However, the **Response Assertions** for all the **font requests** inside the **1st Transaction Controller** (from **servers** ```fonts.googleapis.com``` and ```fonts.gstatic.com```) are failing. In **View Results Tree**, the **Assertion results** of the **Response Assertions** look like this:
+The next logical step is to **apply the same change** to all the other **HTTP Header Managers**: change the **Value** of ```Accept-Encoding``` to ```identity```. After that, most of the **HTTP Requests** execute **successfully** when I run the script. However, the **Response Assertions** for all the **font requests** (from **servers** ```fonts.googleapis.com``` and ```fonts.gstatic.com```) inside the **1st Transaction Controller** are failing. In **View Results Tree**, the **Assertion results** of the **Response Assertions** look like this:
 
 ```
 Assertion error:false
