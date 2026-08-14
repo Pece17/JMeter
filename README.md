@@ -183,7 +183,7 @@ Assertion failure:true
 Assertion failure message:Test failed: text expected to contain /A simple playground for developers and security engineers/
 ```
 
-This is expected, because these **font requests** do not contain the **text** the **Response Assertion is looking for**. This is due to **my previous mistake** of placing the **Response Assertion** inside the entire **Transaction Controller**, instead of inside the specific **HTTP Request**.
+This is expected, because these **font requests** do not contain the **text** the **Response Assertion is looking for**. This is due to **my previous mistake** of placing the **Response Assertion** under the entire **Transaction Controller**, instead of inside the specific **HTTP Request**.
 
 > It is good practice to place **Response Assertions** under **Samplers**, such as **HTTP Requests**, instead of under **Transaction Controllers**, which can contain multiple **Samplers**.
 
