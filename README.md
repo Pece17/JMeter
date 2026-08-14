@@ -163,6 +163,20 @@ The next step is to **modify** the **HTTP Request headers** to **stop requesting
 
 Under the **Name:** column I find ```Accept-Encoding```, and under the corresponding **Value** column, I find ```gzip, deflate, br, zstd```. I **change** the **Value** as ```identity```. ```identity``` is the **HTTP content-coding value** that indicates **no content encoding should be applied**. In other words, you are **telling the server** to **send the response without compression**.
 
+Now I run the script again, and the first **HTTP Request** successfully returns **readable source code**. The **1st Response Assertion** also works now, because the **text it is looking for** can be **found** in the **source code**:
+
+```
+<div class="hero">
+    <h1>Test Authentication. Break Assumptions.</h1>
+    <p>
+        A simple playground for developers and security engineers to test login automation,
+        authentication flows, and real-world edge cases.
+    </p>
+</div>
+```
+
+The next logical step is to **apply the same change** to all the other **HTTP Header Managers**: change the **Value** of ```Accept-Encoding``` to ```identity```.
+
 
 ## Recording Test Scripts
 
