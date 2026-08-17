@@ -249,7 +249,7 @@ I open the **Regular Expression Extractor**, and enter the following **values**:
 
 Finally, I change the **Value** of ```xsrfToken``` from  ```ab6e97f5f559f233e171d07ed8377820``` to ```${XSRF}``` in the previously discussed **POST request** under the **3rd Transaction Controller**.
 
-Now when I **run the script** multiple times, it is seemingly successful every time, and the **Response Assertions** are not failing. I can verify this further by comparing the **XSRF token value** of the **HTTP request** it is **extracted from** to the **XSRF token value** in the **Request Body** of the **POST request**.
+Now when I **run the script** multiple times, it appears to be successful every time, and the **Response Assertions** are not failing. I can verify this further by comparing the **XSRF token value** of the **HTTP request** it is **extracted from** to the **XSRF token value** in the **Request Body** of the **POST request**.
 
 The **Response Body** of the **HTTP request** from which the **XSRF token value** is **extracted**:
 
