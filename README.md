@@ -285,7 +285,7 @@ I can also **inspect** the **Response Body** of the **GET request** sent in resp
 
 My **script** can now **handle the dynamic XSRF token automatically**, which concludes the objective of this chapter.
 
-> Even if you are certain that your **script works**, it is good practice to **test it again the next day**, because sometimes **scripts can stop working unexpectedly due to factors such as expired cookies**, **changed session data**, or **changes to the application**.
+> Even if you are certain that your **script works**, it is good practice to **test it again the next day**, because sometimes **scripts can stop working unexpectedly** due to factors such as **expired cookies**, **changed session data**, or **changes to the application**.
 
 
 ## Recording Test Scripts
