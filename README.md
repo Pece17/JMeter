@@ -236,7 +236,7 @@ I replaced the **literal space** with ```\s+```, replaced the **old XSRF token v
 - ```\s+``` = matches **one** or **more** **whitespace characters**, such as **spaces** or **tabs**.
 - ```([^"]+)``` = captures **one** or **more characters** that are **not quotation marks** as a **capturing group**. ```()``` create a **capturing group**, ```[^"]``` matches any character **except** ```"```, and ```+``` matches **one** or **more of those characters**.
 
-If this **regular expression** works, it should **match** and **extract** only the **value** of the **XSRF token**. For example, ```5b7096e07cab2173be59952324b7c64b``` from the **string** ```id="xsrfToken" value="5b7096e07cab2173be59952324b7c64b"/>```.
+If this **regular expression** works, it should **match** the relevant text and **extract** only the **value** of the **XSRF token**. For example, ```5b7096e07cab2173be59952324b7c64b``` from the **string** ```id="xsrfToken" value="5b7096e07cab2173be59952324b7c64b"/>```.
 
 
 ## Recording Test Scripts
