@@ -231,7 +231,7 @@ The completed **regular expression** looks like this:
 id="xsrfToken"\s+value="([^"]+)"
 ```
 
-I replaced the **literal space** with ```\s+``` and replaced the **old XSRF token value** with ```([^"]+)```.
+I replaced the **literal space** with ```\s+```, replaced the **old XSRF token value** with ```([^"]+)```, and removed ```/>``` because it is not needed.
 
 - ```\s+``` = matches **one** or **more** **whitespace characters**, such as **spaces** or **tabs**.
 - ```([^"]+)``` = captures **one** or **more characters** that are **not quotation marks** as a **capturing group**. ```()``` create a **capturing group**, ```[^"]``` matches any character **except** ```"```, and ```+``` matches **one** or **more of those characters**.
