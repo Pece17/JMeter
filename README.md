@@ -249,15 +249,15 @@ I open the **Regular Expression Extractor**, and enter the following **values**:
 
 Finally, I change the **Value** of ```xsrfToken``` from  ```ab6e97f5f559f233e171d07ed8377820``` to ```${XSRF}``` in the previously discussed **POST request** under the **3rd Transaction Controller**.
 
-Now when I **run the script** multiple times, it appears to be successful every time, and the **Response Assertions** are not failing. I can verify this further by comparing the **XSRF token value** of the **HTTP request** from which it is **extracted** to the **XSRF token value** in the **Request Body** of the **POST request**.
+Now when I **run the script** multiple times, it appears to be successful every time, and the **Response Assertions** are not failing. I can verify this further by comparing the **XSRF token value** of the **HTTP request from which it is extracted** to the **XSRF token value** in the **Request Body** of the **POST request**.
 
-The **Response Body** of the **HTTP request** from which the **XSRF token value** is **extracted**:
+In the **Response Body** of the **HTTP request** from which the **XSRF token value** is **extracted**:
 
 ```
 <input type="text" class="form-control" name="xsrfToken" id="xsrfToken" value="c1894077910df231ee08323fd75faa3d"/>
 ```
 
-The **Request Body** of the **POST request** where the **login credentials** and **XSRF token** are **submitted to the server**:
+In the **Request Body** of the **POST request** where the **login credentials** and **XSRF token** are **submitted to the server**:
 
 ```
 POST https://authenticationtest.com//login/?mode=xsrfChallenge
