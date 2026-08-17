@@ -189,12 +189,12 @@ This is expected, because these **font requests** do not contain the **text** th
 
 I place all **4 Response Assertions** under their respective **HTTP Requests**, and run the script once again. This time, **only** the **3rd Transaction Controller** fails. This is **expected** because I have not yet **correlated the XSRF token**.
 
-I inspect the specific **HTTP Request** that fails the **Response Assertion**. It is the only **POST request** in my **test script**, whereas all the other **HTTP requests** are **GET requests**.
+I inspect the specific **HTTP Request** that fails the **Response Assertion**. It is the only **POST request** in my **test script**, whereas all the other **HTTP Requests** are **GET requests**.
 
 - **GET request** = **asks** a **server** to **retrieve data** or a **resource**, such as an **HTML page**.
 - **POST request** = **sends data** to a **server** for **processing**, such as **login credentials** or **form data**.
 
-In the **Parameters** tab, I see **3 items**:
+In the **Parameters** tab of this **POST request**, I see **3 items**:
 
 1. ```email``` with **Value** ```xsrf@${host}```
 2. ```password``` with **Value**  ```pa$$w0rd```
@@ -206,17 +206,17 @@ I entered the **values** ```xsrf@authenticationtest.com``` (```email```) and ```
 
 ```ab6e97f5f559f233e171d07ed8377820``` (```xsrfToken```), on the other hand, is a **dynamic value**, so it **will not work as is**. I need to **correlate** it. In order to do this, I first need to find the specific **HTTP Request** and the location in its **Response Body** where the **XSRF token** can be found and **extracted**. I find the easiest way is to first **run the script** and then use the **Search** function in **View Results Tree** to find the earliest **HTTP request** that contains the **keyword**. Since the **dynamic value** in my script is called ```xsrfToken```, I can use this as the **keyword**.
 
-Using **Search** with the ```xsrfToken``` **keyword** in **View Results Tree**, I find a **match** in the **Response Body** of the only **HTTP Request** in the **2nd Transaction Controller**. Furthermore, using the **Find** function with the same **keyword** within the **Response Body** of this **HTTP Request**, I locate the exact position where the **XSRF token** can be extracted:
+Using **Search** with the ```xsrfToken``` **keyword** in **View Results Tree**, I find a **match** in the **Response Body** of the only **HTTP Request** in the **2nd Transaction Controller**. Furthermore, using the **Find** function with the same **keyword** within the **Response Body** of this **HTTP Request**, I locate the **exact position** where the **XSRF token** can be **extracted**:
 
 ```
 <input type="text" class="form-control" name="xsrfToken" id="xsrfToken" value="5b7096e07cab2173be59952324b7c64b"/>
 ```
 
-After this, I create a **Regular Expression Extractor** under this **HTTP Request**. It can be done by **right-clicking** the **HTTP Request** (or other **Sampler**), hovering over **Add**, hovering over **Post Processors**, and selecting **Regular Expression Extractor**. In the **Regular Expression Extractor**, there are **4** settings I am concerned with:
+After this, I create a **Regular Expression Extractor** under this **HTTP Request**. It can be done by **right-clicking** the **HTTP Request** (or other **Sampler**), hovering over **Add**, hovering over **Post Processors**, and selecting **Regular Expression Extractor**. In the **Regular Expression Extractor**, there are **4 settings** I am concerned with:
 
 - **Name of created variable:** = what **JMeter** will call the **extracted value**. This **name** can then be used to **reference the extracted value** elsewhere in the **test script** using the ```${example}``` **syntax**.
 - **Regular Expression:** = a **special text string** used to **describe a search pattern** that **JMeter** searches for.
-- **Template ($i$ where i is capturing group number, starts at 1):** = which **capturing group** **JMeter** should use as the **extracted value**. For example, ```$1$``` tells **JMeter** to use the **contents** of the **first capturing group**.
+- **Template (`$i$` where i is capturing group number, starts at 1):** = which **capturing group** **JMeter** should use as the **extracted value**. For example, ```$1$``` tells **JMeter** to use the **contents** of the **first capturing group**.
 - **Match No. (0 for Random):** = which **matching occurrence** **JMeter** should **extract**. For example, ```1``` selects the **first match**, while ```2``` selects the **second match**.
 
 
