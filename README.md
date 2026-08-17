@@ -217,7 +217,7 @@ After this, I create a **Regular Expression Extractor** under this **HTTP Reques
 - **Name of created variable:** = what **JMeter** will call the **extracted value**. This **name** can then be used to **reference the extracted value** elsewhere in the **test script** using the ```${example}``` **syntax**.
 - **Regular Expression:** = a **special text string** used to **describe a search pattern** that **JMeter** searches for.
 - **Template (`$i$` where i is capturing group number, starts at 1):** = tells **JMeter** which part of the **regular expression match** to use as the **extracted value**. The **capturing groups** are the parts of the **regular expression** enclosed in **parentheses** = **()**. For example, ```$1$``` tells **JMeter** to use the **contents of the first capturing group**. In practice, this only matters if there are **multiple capturing groups** within a **regular expression**. If there is only **one capturing group**, then ```$1$``` should be used.
-- **Match No. (0 for Random):** = which **matching occurrence** **JMeter** should **extract**. For example, ```1``` selects the **first match**, while ```2``` selects the **second match**.
+- **Match No. (0 for Random):** = which **matching occurrence** **JMeter** should **extract**. For example, ```1``` selects the **first match**, while ```2``` selects the **second match**. This matters if your **regular expression** finds **multiple matches in the same response**.
 
 
 ## Recording Test Scripts
