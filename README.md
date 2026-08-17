@@ -238,7 +238,16 @@ I replaced the **literal space** with ```\s+```, replaced the **old XSRF token v
 
 If this **regular expression** works, it should **match the relevant text** and **extract only** the **value** of the **XSRF token**. For example, ```5b7096e07cab2173be59952324b7c64b``` will be **extracted** from the **string** ```id="xsrfToken" value="5b7096e07cab2173be59952324b7c64b"/>```.
 
-Before adding this **regular expression** to the previously created **Regular Expression Extractor**, I can **test it beforehand** by using the **Search** and **Find** functions with the **Regular exp.** option **enabled** in **View Results Tree**. The **regular expression** can indeed find the **string I am looking for**, but there is one **caveat** with the **Find** function in **View Results Tree**: it **does not highlight** the **capture group**, which is the **part of the match that will be extracted**.
+Before adding this **regular expression** to the previously created **Regular Expression Extractor**, I can **test it beforehand** by using the **Search** and **Find** functions with the **Regular exp. option enabled** in **View Results Tree**. The **regular expression** can indeed find the **string I am looking for**, but there is one **caveat** with the **Find** function in **View Results Tree**: it **does not highlight** the **capture group**, which is the **part of the match that will be extracted**. But, I am quite certain this **regular expression** will work in practice.
+
+I open the **Regular Expression Extractor**, and enter the following **values**:
+
+- **Name of created variable:** = ```XSRF```
+- **Regular Expression:** = ```id="xsrfToken"\s+value="([^"]+)"```
+- **Template (`$i$` where i is capturing group number, starts at 1):** = ```$1$```
+- **Match No. (0 for Random):** = ```1```
+
+Finally, I change the **Value** of ```xsrfToken``` from  ```ab6e97f5f559f233e171d07ed8377820``` to ```${XSRF}``` in the previously discussed **POST request** under the **3rd Transaction Controller**.
 
 
 ## Recording Test Scripts
