@@ -251,13 +251,13 @@ Finally, I change the **Value** of ```xsrfToken``` from  ```ab6e97f5f559f233e171
 
 Now when I **run the script** multiple times, it is seemingly successful every time, and the **Response Assertions** are not failing. I can verify this further by comparing the **XSRF token value** of the **HTTP request** it is **extracted from** to the **XSRF token value** in the **Request Body** of the **POST request**.
 
-The **HTTP request** from which the **XSRF token value** is **extracted**:
+The **Response Body** of the **HTTP request** from which the **XSRF token value** is **extracted**:
 
 ```
 <input type="text" class="form-control" name="xsrfToken" id="xsrfToken" value="c1894077910df231ee08323fd75faa3d"/>
 ```
 
-The **POST request** where the **login credentials** and **XSRF token** are **submitted to the server**:
+The **Request Body** of the **POST request** where the **login credentials** and **XSRF token** are **submitted to the server**:
 
 ```
 POST https://authenticationtest.com//login/?mode=xsrfChallenge
@@ -266,7 +266,24 @@ POST data:
 email=xsrf%40authenticationtest.com&password=pa%24%24w0rd&xsrfToken=c1894077910df231ee08323fd75faa3d
 ```
 
-The **XSRF token** (```c1894077910df231ee08323fd75faa3d``` **in this iteration**) is **identical in both requests**. My **script** can now **handle the dynamic XSRF token automatically**, which concludes the objective of this chapter.
+The **XSRF token** (```c1894077910df231ee08323fd75faa3d``` **in this iteration**) is **identical in both requests**.
+
+I can also **inspect** the **GET request** sent in response to my **POST request** in **View Results Tree**. As can be seen, the following **source code** provides **definitive confirmation of success**:
+
+```
+<h1>Login Success</h1>
+<div class="alert alert-success">
+	<strong>Success!</strong> You are now logged in!<br><br>
+
+	You will be logged in for the next 10 minutes.
+			If you wish to log out sooner, there is a Sign Out option in the top right corner.
+	
+	<br><br>
+	For HTTP/NTLM Auth: Due to how browsers maintain this session, you may need to clear your browser cache to log out. There is no functional way for this site to provide a logout for this method. Something to think about if you plan on using this method.
+</div>
+```
+
+My **script** can now **handle the dynamic XSRF token automatically**, which concludes the objective of this chapter.
 
 > Even if you are certain that your **script works**, it is good practice to **test it again the next day**, because sometimes **scripts can stop working unexpectedly due to factors such as expired cookies**, **changed session data**, or **changes to the application**.
 
