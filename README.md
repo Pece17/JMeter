@@ -189,6 +189,19 @@ This is expected, because these **font requests** do not contain the **text** th
 
 I place all **4 Response Assertions** under their respective **HTTP Requests**, and run the script once again. This time, **only** the **3rd Transaction Controller** fails. This is **expected** because I have not yet **correlated the XSRF token**.
 
+I inspect the specific **HTTP Request** that fails the **Response Assertion**. It is the only **POST request** in my **test script**, whereas all the other **HTTP requests** are **GET requests**.
+
+- **GET request** = **asks** a **server** to **retrieve data** or a **resource**, such as an **HTML page**.
+- **POST request** = **sends data** to a **server** for **processing**, such as **login credentials** or **form data**.
+
+In the **Parameters** tab, I see **3 items**:
+
+1. ```email``` with **Value** ```xsrf@${host}```
+2. ```password``` with **Value**  ```pa$$w0rd```
+3. ```xsrfToken``` with **Value** ```ab6e97f5f559f233e171d07ed8377820```
+
+> In the context of **computer programming**, a **parameter** is a **name-value pair** that **provides data** to an **HTTP request**, such as a **username**, **password**, or **XSRF token**.
+
 
 ## Recording Test Scripts
 
