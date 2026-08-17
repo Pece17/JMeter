@@ -202,6 +202,23 @@ In the **Parameters** tab, I see **3 items**:
 
 > In the context of **computer programming**, a **parameter** is a **name-value pair** that **provides data** to an **HTTP request**, such as a **username**, **password**, or **XSRF token**.
 
+I entered the **values** ```xsrf@authenticationtest.com``` (```email```) and ```pa$$w0rd``` (```password```) when **logging in** during **recording the script**, so they are **static** and should work as is. The reason why ```xsrf@authenticationtest.com``` has automatically been changed to ```xsrf@${host}``` is because ```authenticationtest.com``` was already **parameterized** using the **variable** ```host``` when the **Recording** template of this **Test Plan** was created. This can be seen in the **element** called **User Defined Variables**. In **JMeter**, ```${example}``` is the **syntax** for **variable substitution**, so therefore ```xsrf@${host}``` = ```xsrf@authenticationtest.com```.
+
+```ab6e97f5f559f233e171d07ed8377820``` (```xsrfToken```), on the other hand, is a **dynamic value**, so it **will not work as is**. I need to **correlate** it. In order to do this, I first need to find the specific **HTTP Request** and the location in its **Response Body** where the **XSRF token** can be found and **extracted**. I find the easiest way is to first **run the script** and then use the **Search** function in **View Results Tree** to find the earliest **HTTP request** that contains the **keyword**. Since the **dynamic value** in my script is called ```xsrfToken```, I can use this as the **keyword**.
+
+Using **Search** with the ```xsrfToken``` **keyword** in **View Results Tree**, I find a **match** in the **Response Body** of the only **HTTP Request** in the **2nd Transaction Controller**. Furthermore, using the **Find** function with the same **keyword** within the **Response Body** of this **HTTP Request**, I locate the exact position where the **XSRF token** can be extracted:
+
+```
+<input type="text" class="form-control" name="xsrfToken" id="xsrfToken" value="5b7096e07cab2173be59952324b7c64b"/>
+```
+
+After this, I create a **Regular Expression Extractor** under this **HTTP Request**. It can be done by **right-clicking** the **HTTP Request** (or other **Sampler**), hovering over **Add**, hovering over **Post Processors**, and selecting **Regular Expression Extractor**. In the **Regular Expression Extractor**, there are **4** settings I am concerned with:
+
+- **Name of created variable:** = what **JMeter** will call the **extracted value**. This **name** can then be used to **reference the extracted value** elsewhere in the **test script** using the ```${example}``` **syntax**.
+- **Regular Expression:** = a **special text string** used to **describe a search pattern** that **JMeter** searches for.
+- **Template ($i$ where i is capturing group number, starts at 1):** = which **capturing group** **JMeter** should use as the **extracted value**. For example, ```$1$``` tells **JMeter** to use the **contents** of the **first capturing group**.
+- **Match No. (0 for Random):** = which **matching occurrence** **JMeter** should **extract**. For example, ```1``` selects the **first match**, while ```2``` selects the **second match**.
+
 
 ## Recording Test Scripts
 
