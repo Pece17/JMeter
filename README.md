@@ -249,15 +249,15 @@ I open the **Regular Expression Extractor**, and enter the following **values**:
 
 Finally, I change the **Value** of ```xsrfToken``` from  ```ab6e97f5f559f233e171d07ed8377820``` to ```${XSRF}``` in the previously discussed **POST request** under the **3rd Transaction Controller**.
 
-Now when I **run the script multiple times**, it appears to be successful every time, and the **Response Assertions** are not failing. I can verify this further by comparing the **XSRF token value** in the **HTTP request from which it is extracted** to the **XSRF token value** in the **Request Body** of the **POST request**.
+Now when I **run the script multiple times**, it appears to be **successful every time**, and the **Response Assertions are not failing**. I can verify this further by comparing the **XSRF token value** in the **Response Body** of the **HTTP request from which it is extracted** to the **XSRF token value** in the **Request Body** of the **POST request**.
 
-In the **Response Body** of the **HTTP request** from which the **XSRF token value** is **extracted**:
+In the **Response Body** of the **HTTP request from which the XSRF token value is extracted**:
 
 ```
 <input type="text" class="form-control" name="xsrfToken" id="xsrfToken" value="c1894077910df231ee08323fd75faa3d"/>
 ```
 
-In the **Request Body** of the **POST request** where the **login credentials** and **XSRF token** are **submitted to the server**:
+In the **Request Body** of the **POST request** where the **login credentials and XSRF token are submitted to the server**:
 
 ```
 POST https://authenticationtest.com//login/?mode=xsrfChallenge
@@ -266,9 +266,9 @@ POST data:
 email=xsrf%40authenticationtest.com&password=pa%24%24w0rd&xsrfToken=c1894077910df231ee08323fd75faa3d
 ```
 
-The **XSRF token** (```c1894077910df231ee08323fd75faa3d``` **in this iteration**) is **identical in both requests**.
+The **XSRF token** (```c1894077910df231ee08323fd75faa3d``` in this iteration) is **identical in both requests**.
 
-I can also **inspect** the **Response Body** of the **GET request** sent in response to my **POST request** in **View Results Tree**. As can be seen, the following **source code** provides **definitive confirmation of success**:
+I can also **inspect** the **Response Body** of the **GET request** sent in response to my **POST request** in **View Results Tree**. As is evident, the following **source code** provides **definitive confirmation of success**:
 
 ```
 <h1>Login Success</h1>
