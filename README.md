@@ -268,7 +268,7 @@ email=xsrf%40authenticationtest.com&password=pa%24%24w0rd&xsrfToken=c1894077910d
 
 The **XSRF token** (```c1894077910df231ee08323fd75faa3d``` in this iteration) is **identical in both requests**.
 
-I can also **inspect the Response Body** of the **GET request sent in response to my POST request** in **View Results Tree**. As is evident, the following **source code** provides **definitive confirmation of success**:
+I can also **inspect the Response Body** of the **GET request sent in response to my POST request** in **View Results Tree**. In other words, the **source code** of the **page a user sees after successfully logging in**. As is evident, the following **snippet of the source code** provides **definitive confirmation of success**:
 
 ```
 <h1>Login Success</h1>
