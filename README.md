@@ -163,7 +163,7 @@ The next step is to **modify** the **HTTP Request headers** to **stop requesting
 
 Under the **Name:** column I find ```Accept-Encoding```, and under the corresponding **Value** column, I find ```gzip, deflate, br, zstd```. I **change** the **Value** to ```identity```. ```identity``` is the **HTTP content-coding value** that indicates **no content encoding should be applied**. In other words, I am **telling the server** to **send the response without compression**.
 
-Now I run the script again, and the first **HTTP Request** successfully returns **readable source code**. The **1st Response Assertion** also works now, because the **text it is looking for** can be **found** in the **source code**:
+Now I run the script again, and the first **HTTP Request** successfully returns **readable source code**. The **1st Response Assertion** also works now, because the **text it is looking for** can be **found in the source code**:
 
 ```
 <div class="hero">
@@ -189,10 +189,10 @@ This is expected, because these **font requests** do not contain the **text** th
 
 I place all **4 Response Assertions** under their respective **HTTP Requests**, and run the script once again. This time, **only** the **3rd Transaction Controller** fails. This is **expected** because I have not yet **correlated the XSRF token**.
 
-I inspect the specific **HTTP Request** that fails the **Response Assertion**. It is the only **POST request** in my **test script**, whereas all the other **HTTP Requests** are **GET requests**.
+I inspect the **specific HTTP Request** that fails the **Response Assertion**. It is the only **POST request** in my **test script**, whereas all the other **HTTP Requests** are **GET requests**.
 
-- **GET request** = **asks** a **server** to **retrieve data** or a **resource**, such as an **HTML page**.
-- **POST request** = **sends data** to a **server** for **processing**, such as **login credentials** or **form data**.
+- **GET request** = asks a server to **retrieve data or a resource**, such as an **HTML page**.
+- **POST request** = **sends data** to a server for **processing**, such as **login credentials or form data**.
 
 In the **Parameters** tab of this **POST request**, I see **3 items**:
 
@@ -202,11 +202,11 @@ In the **Parameters** tab of this **POST request**, I see **3 items**:
 
 > In the context of **computer programming**, a **parameter** is a **name-value pair** that **provides data** to an **HTTP request**, such as a **username**, **password**, or **XSRF token**.
 
-I entered the **values** ```xsrf@authenticationtest.com``` (```email```) and ```pa$$w0rd``` (```password```) when **logging in** during **recording the script**, so they are **static** and should work as is. The reason why ```xsrf@authenticationtest.com``` has automatically been changed to ```xsrf@${host}``` is because ```authenticationtest.com``` was already **parameterized** using the **variable** ```host``` when the **Recording** template of this **Test Plan** was created. This can be seen in the **element** called **User Defined Variables**. In **JMeter**, ```${example}``` is the **syntax** for **variable substitution**, so therefore ```xsrf@${host}``` = ```xsrf@authenticationtest.com```.
+I entered the **values** ```xsrf@authenticationtest.com``` (```email```) and ```pa$$w0rd``` (```password```) when **logging in** during **recording the script**, so they are **static** and should work as is. The reason why ```xsrf@authenticationtest.com``` has automatically been changed to ```xsrf@${host}``` is because ```authenticationtest.com``` was already **parameterized** using the **variable** ```host``` when the **Recording template** of this **Test Plan** was created. This can be seen in the **element** called **User Defined Variables**. In **JMeter**, ```${example}``` is the **syntax** for **variable substitution**, so therefore ```xsrf@${host}``` = ```xsrf@authenticationtest.com```.
 
-```ab6e97f5f559f233e171d07ed8377820``` (```xsrfToken```), on the other hand, is a **dynamic value**, so it **will not work as is**. I need to **correlate** it. In order to do this, I first need to find the specific **HTTP Request** and the location in its **Response Body** where the **XSRF token** can be found and **extracted**. I find the easiest way is to first **run the script** and then use the **Search** function in **View Results Tree** to find the earliest **HTTP request** that contains the **keyword**. Since the **dynamic value** in my script is called ```xsrfToken```, I can use this as the **keyword**.
+```ab6e97f5f559f233e171d07ed8377820``` (```xsrfToken```), on the other hand, is a **dynamic value**, so it will **not work as is**. I need to **correlate** it. In order to do this, I first need to find the specific **HTTP Request** and the location in its **Response Body** where the **XSRF token can be found and extracted**. I find the easiest way is to first **run the script** and then use the **Search** function in **View Results Tree** to find the earliest **HTTP request** that contains the **keyword**. Since the **dynamic value** in my script is called ```xsrfToken```, I can use this as the **keyword**.
 
-Using **Search** with the ```xsrfToken``` **keyword** in **View Results Tree**, I find a **match** in the **Response Body** of the only **HTTP Request** in the **2nd Transaction Controller**. Furthermore, using the **Find** function with the same **keyword** within the **Response Body** of this **HTTP Request**, I locate the **exact position** where the **XSRF token** can be **extracted**:
+Using **Search** with the ```xsrfToken``` **keyword** in **View Results Tree**, I find a **match** in the **Response Body** of the **only HTTP Request in the 2nd Transaction Controller**. Furthermore, using the **Find** function with the **same keyword** within the **Response Body** of this **HTTP Request**, I locate the **exact position where the XSRF token can be extracted**:
 
 ```
 <input type="text" class="form-control" name="xsrfToken" id="xsrfToken" value="5b7096e07cab2173be59952324b7c64b"/>
@@ -219,13 +219,13 @@ After this, I create a **Regular Expression Extractor** under this **HTTP Reques
 - **Template (`$i$` where i is capturing group number, starts at 1):** = tells **JMeter** which part of the **regular expression match** to use as the **extracted value**. The **capturing groups** are the parts of the **regular expression** enclosed in **parentheses** = **()**. For example, ```$1$``` tells **JMeter** to use the **contents of the first capturing group**. In practice, this only matters if there are **multiple capturing groups** within a **regular expression**. If there is only **one capturing group**, then ```$1$``` should be used.
 - **Match No. (0 for Random):** = which **matching occurrence** **JMeter** should **extract**. For example, ```1``` selects the **first match**, while ```2``` selects the **second match**. This matters if your **regular expression** finds **multiple matches in the same response**.
 
-At this point, I am going to create the **regular expression** that will **extract** the **XSRF token**. There is a handy **website** for practicing **regular expressions**: https://regex101.com/. However, remember **not to paste** any **sensitive source code** there, as it is a **public website**. In my case, I can use it to create this **regular expression**, because the **source code** is already **publicly available**. I will use the following **string** as the **base**, since it is **unique** enough:
+At this point, I am going to create the **regular expression** that will **extract the XSRF token**. There is a handy **website** for practicing **regular expressions**: https://regex101.com/. However, remember **not to paste any sensitive source code there**, as it is a **public website**. In my case, I can use it to create this **regular expression**, because the **source code is already publicly available**. I will use the following **string** as the **base**, since it is **unique** enough:
 
 ```
 id="xsrfToken" value="5b7096e07cab2173be59952324b7c64b"/>
 ```
 
-The completed **regular expression** looks like this:
+The **completed regular expression** looks like this:
 
 ```
 id="xsrfToken"\s+value="([^"]+)"
@@ -233,7 +233,7 @@ id="xsrfToken"\s+value="([^"]+)"
 
 I replaced the **literal space** with ```\s+```, replaced the **old XSRF token value** with ```([^"]+)```, and removed ```/>``` because it is not needed.
 
-- ```\s+``` = matches **one** or **more** **whitespace characters**, such as **spaces** or **tabs**.
+- ```\s+``` = matches **one or more** **whitespace characters**, such as **spaces** or **tabs**. The ```+``` is important because ```\s``` would only match **one whitespace character**.
 - ```([^"]+)``` = captures **one** or **more characters** that are **not quotation marks** as a **capturing group**. ```()``` create a **capturing group**, ```[^"]``` matches any character **except** ```"```, and ```+``` matches **one** or **more of those characters**.
 
 If this **regular expression** works, it should **match the relevant text** and **extract only** the **value** of the **XSRF token**. For example, ```5b7096e07cab2173be59952324b7c64b``` will be **extracted** from the **string** ```id="xsrfToken" value="5b7096e07cab2173be59952324b7c64b"/>```.
@@ -283,9 +283,11 @@ I can also **inspect** the **Response Body** of the **GET request** sent in resp
 </div>
 ```
 
-My **script** can now **handle the dynamic XSRF token automatically**, which concludes the objective of this chapter.
+My **script** can now **handle the dynamic XSRF token automatically**, which **fulfills the objective of this chapter**.
 
 > Even if you are certain that your **script works**, it is good practice to **test it again the next day**, because sometimes **scripts can stop working unexpectedly** due to factors such as **expired cookies**, **changed session data**, or **changes to the application**.
+
+This concludes this chapter about **recording and correlating a Test Script with a dynamic token**.
 
 
 ## Recording Test Scripts
