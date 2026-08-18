@@ -257,7 +257,7 @@ In the **Response Body** of the **HTTP request from which the XSRF token value i
 <input type="text" class="form-control" name="xsrfToken" id="xsrfToken" value="c1894077910df231ee08323fd75faa3d"/>
 ```
 
-In the **Request Body** of the **POST request** where the **login credentials and XSRF token are submitted to the server**:
+In the **Request Body** of the **POST request where the login credentials and XSRF token are submitted to the server**:
 
 ```
 POST https://authenticationtest.com//login/?mode=xsrfChallenge
