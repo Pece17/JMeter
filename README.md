@@ -233,10 +233,10 @@ id="xsrfToken"\s+value="([^"]+)"
 
 I replaced the **literal space** with ```\s+```, replaced the **old XSRF token value** with ```([^"]+)```, and removed ```/>``` because it is not needed.
 
-- ```\s+``` = matches **one or more** **whitespace characters**, such as **spaces** or **tabs**. The ```+``` is important because ```\s``` would only match **one whitespace character**.
-- ```([^"]+)``` = captures **one** or **more characters** that are **not quotation marks** as a **capturing group**. ```()``` create a **capturing group**, ```[^"]``` matches any character **except** ```"```, and ```+``` matches **one** or **more of those characters**.
+- ```\s+``` = matches **one or more** **whitespace characters**, such as **spaces** or **tabs**. The ```+``` is important because ```\s``` only matches **one whitespace character**.
+- ```([^"]+)``` = captures **one or more characters** that are **not quotation marks** (```"```) as a **capturing group**. ```()``` **create a capturing group**, ```[^"]``` matches **any character except** ```"```, and ```+``` matches **one or more of those characters**.
 
-If this **regular expression** works, it should **match the relevant text** and **extract only** the **value** of the **XSRF token**. For example, ```5b7096e07cab2173be59952324b7c64b``` will be **extracted** from the **string** ```id="xsrfToken" value="5b7096e07cab2173be59952324b7c64b"/>```.
+If this **regular expression** works, it should **match the relevant text** and **extract only the value of the XSRF token**. For example, ```5b7096e07cab2173be59952324b7c64b``` will be **extracted from the string** ```id="xsrfToken" value="5b7096e07cab2173be59952324b7c64b"/>```.
 
 Before adding this **regular expression** to the previously created **Regular Expression Extractor**, I can **test it beforehand** by using the **Search** and **Find** functions with the **Regular exp. option enabled** in **View Results Tree**. The **regular expression** can indeed find the **string I am looking for**, but there is one **caveat** with the **Find** function in **View Results Tree**: it **does not highlight** the **capture group**, which is the **part of the match that will be extracted**. But, I am quite certain this **regular expression** will work in practice.
 
