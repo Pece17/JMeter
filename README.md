@@ -268,7 +268,7 @@ email=xsrf%40authenticationtest.com&password=pa%24%24w0rd&xsrfToken=c1894077910d
 
 The **XSRF token** (```c1894077910df231ee08323fd75faa3d``` in this iteration) is **identical in both requests**.
 
-I can also **inspect** the **Response Body** of the **GET request** sent in response to my **POST request** in **View Results Tree**. As is evident, the following **source code** provides **definitive confirmation of success**:
+I can also **inspect the Response Body** of the **GET request sent in response to my POST request** in **View Results Tree**. As is evident, the following **source code** provides **definitive confirmation of success**:
 
 ```
 <h1>Login Success</h1>
@@ -285,7 +285,7 @@ I can also **inspect** the **Response Body** of the **GET request** sent in resp
 
 My **script** can now **handle the dynamic XSRF token automatically**, which **fulfills the objective of this chapter**.
 
-> Even if you are certain that your **script works**, it is good practice to **test it again the next day**, because sometimes **scripts can stop working unexpectedly** due to factors such as **expired cookies**, **changed session data**, or **changes to the application**.
+> Even if you are certain that your **script works**, it is good practice to **test it again the next day**, because sometimes **scripts can stop working unexpectedly due to factors such as expired cookies**, **changed session data**, or **changes to the application**.
 
 This concludes this chapter about **recording and correlating a Test Script with a dynamic token**.
 
